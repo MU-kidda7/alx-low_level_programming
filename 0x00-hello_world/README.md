@@ -1,1 +1,1 @@
-The directory contains  projects related to C
+The directory contains our first C projects.
