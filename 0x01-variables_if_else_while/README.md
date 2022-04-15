@@ -1,0 +1,1 @@
+This directory contains projects given about loops, conditionals and variables.
