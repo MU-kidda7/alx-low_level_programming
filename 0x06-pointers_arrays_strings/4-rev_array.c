@@ -1,29 +1,21 @@
-/* reverse_array - a function that reverses the
- *                content of an array of integers
- *
- * @a: pointer to int array
- * @n: is the number of elements to swap
- *
- * Return: nothing
-*/
+#include "main.h"
+/**
+ * string_toupper - changes all lowercase letters of a string
+ * to uppercase
+ * @s: input string.
+ * Return: the pointer to dest.
+ */
 
-void reverse_array(int *a, int n)
+char *string_toupper(char *s)
 {
-  int temp, s, e;
+	int count = 0;
 
-  s = 0;
-  e = n - 1;
-  /* set value in array a in temp
-   * then place the last array in
-   * the first array then place
-   * value in temp to last array
-  */
-  while (s < e)
-  {
-    temp = a[s];
-    a[s] = a[e];
-    a[e] = temp;
-    s++;
-    e--;
-  }
+	while (*(s + count) != '\0')
+	{
+		if ((*(s + count) >= 97) && (*(s + count) <= 122))
+			*(s + count) = *(s + count) - 32;
+		count++;
+	}
+
+	return (s);
 }
