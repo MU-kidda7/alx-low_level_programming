@@ -1,43 +1,22 @@
 /**
- * C program to concatenate two strings 
- */
+*  _strcat -function that concatenates two strings.
+*
+*  @dest: pointer to destination input
+*  @src: pointer to sourse input
+*
+* Return: pointer to resulting string @dest
+*/
 
-#include <stdio.h>
-#define MAX_SIZE 100 // Maximum string size
-
-int main()
+char *_strcat(char *dest, char *src)
 {
-    char str1[MAX_SIZE], str2[MAX_SIZE];
-    int i, j;
-
-
-    /* Input two strings from user */
-    printf("Enter first string: ");
-    gets(str1);
-    printf("Enter second string: ");
-    gets(str2);
-
-
-    /* Move till the end of str1 */
-    i=0;
-    while(str1[i] != '\0')
-    {
-        i++;
-    }
-
-    /* Copy str2 to str1 */
-    j = 0;
-    while(str2[j] != '\0')
-    {
-        str1[i] = str2[j];
-        i++;
-        j++;
-    }
-
-    // Make sure that str1 is NULL terminated
-    str1[i] = '\0';
-
-    printf("Concatenated string = %s", str1);
-
-    return 0;
+int c, c2;
+c = 0;
+/*find the size of dest array*/
+while (dest[c])
+c++;
+/* iterate through each src array value without the null byte*/
+for (c2 = 0; src[c2] ; c2++)
+/*append src[c2] to dest[c] while overwritting the null byte in dest*/
+dest[c++] = src[c2];
+return (dest);
 }
